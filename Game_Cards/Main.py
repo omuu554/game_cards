@@ -1,6 +1,5 @@
 from Card import Card
 from CardGame import CardGame
-from Player import Player
 
 def ActionsOnRoundWinner(card1:Card, card2:Card,cardGame:CardGame):
 
