@@ -2,7 +2,8 @@ from Card import Card
 from CardGame import CardGame
 from Player import Player
 
-def ActionsOfWinner(card1:Card, card2:Card, player1:Player ,player2:Player):
+def ActionsOnRoundWinner(card1:Card, card2:Card, player1:Player ,player2:Player):
+
     if (card1 > card2):
         cardGame.Player1.Add_Card(card1)
         cardGame.Player1.Add_Card(card2)
@@ -12,13 +13,12 @@ def ActionsOfWinner(card1:Card, card2:Card, player1:Player ,player2:Player):
         cardGame.Player2.Add_Card(card2)
         print(f"\n{player2.PlayerName} won in: {card1} vs {card2}\n")
 
-
 def CardGameManager(cardGame:CardGame):
     for Round in range(10):
         p1Card = cardGame.Player1.Get_Card()
         p2Card = cardGame.Player2.Get_Card()
         print(f"\n(Player: {cardGame.Player1.PlayerName} | card: {p1Card})       vs       (Player: {cardGame.Player2.PlayerName} | card: {p2Card})\n")
-        ActionsOfWinner(p1Card, p2Card, cardGame.Player1, cardGame.Player2)
+        ActionsOnRoundWinner(p1Card, p2Card, cardGame.Player1, cardGame.Player2)
         # if(p1Card > p2Card ): # THE FUNCTION ABOVE DOES THE SAME THING
         #     cardGame.Player1.Add_Card(p1Card)
         #     cardGame.Player1.Add_Card(p2Card)
@@ -29,9 +29,6 @@ def CardGameManager(cardGame:CardGame):
         #     print(f"\n{cardGame.Player2.PlayerName} won in: {p1Card} vs {p2Card}\n")
 
     return cardGame.Get_Winner()
-
-
-
 
 
 if __name__ == "__main__":
