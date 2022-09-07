@@ -10,7 +10,7 @@ def ActionsOnRoundWinner(card1:Card, card2:Card,cardGame:CardGame):
     else:
         cardGame.Player2.Add_Card(card1)
         cardGame.Player2.Add_Card(card2)
-        print(f"\n{cardGame.Player2.PlayerName} won in: {card1} vs {card2}\n")
+        print(f"\n{cardGame.Player2.PlayerName} won in: {card2} vs {card1}\n")
 
 def CardGameManager(cardGame:CardGame):
     for Round in range(10):
