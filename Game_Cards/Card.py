@@ -54,8 +54,8 @@ class Card:
 
 
 
-    # def __repr__(self): #used for testing purposes
-    #      return f"{self.Value},{self.Suit} "
+    def __repr__(self):
+          return f"{self.__StringValues[str(self.Value)]} of {self.__StringSuits[str(self.Suit)]}"
 
 
 

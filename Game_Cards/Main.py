@@ -13,6 +13,8 @@ def ActionsOnRoundWinner(card1:Card, card2:Card,cardGame:CardGame):
         print(f"\n{cardGame.Player2.PlayerName} won in: {card2} vs {card1}\n")
 
 def CardGameManager(cardGame:CardGame):
+    print(f"Player: {cardGame.Player1.PlayerName}\nCards: {cardGame.Player1.PlayerCards}\n")
+    print(f"Player: {cardGame.Player2.PlayerName}\nCards: {cardGame.Player2.PlayerCards}\n")
     Round = 0
     for Round in range(10):
         p1Card = cardGame.Player1.Get_Card()
@@ -39,7 +41,7 @@ if __name__ == "__main__":
 
     playerDeckSize = input("Please enter an integer for the decksize of the first player (10-26): ")
 
-    cardGame = CardGame(playerName1,playerName2,playerDeckSize)
+    cardGame = CardGame(playerName1, playerName2, playerDeckSize)
     GameWinner = CardGameManager(cardGame)
 
     if(GameWinner is not None):
