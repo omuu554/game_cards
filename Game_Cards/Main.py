@@ -13,9 +13,12 @@ def ActionsOnRoundWinner(card1:Card, card2:Card,cardGame:CardGame):
         print(f"\n{cardGame.Player2.PlayerName} won in: {card2} vs {card1}\n")
 
 def CardGameManager(cardGame:CardGame):
+    Round = 0
     for Round in range(10):
         p1Card = cardGame.Player1.Get_Card()
         p2Card = cardGame.Player2.Get_Card()
+        Round += 1
+        print(f"\nRound: {Round}")
         print(f"\n(Player: {cardGame.Player1.PlayerName} | card: {p1Card})       vs       (Player: {cardGame.Player2.PlayerName} | card: {p2Card})\n")
         ActionsOnRoundWinner(p1Card, p2Card, cardGame)
         # if(p1Card > p2Card ): # THE FUNCTION ABOVE DOES THE SAME THING
