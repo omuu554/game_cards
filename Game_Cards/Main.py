@@ -19,7 +19,7 @@ def CardGameManager(cardGame:CardGame):
         p2Card = cardGame.Player2.Get_Card()
         Round += 1
         print(f"\nRound: {Round}")
-        print(f"\n(Player: {cardGame.Player1.PlayerName} | card: {p1Card})       vs       (Player: {cardGame.Player2.PlayerName} | card: {p2Card})\n")
+        print(f"(Player: {cardGame.Player1.PlayerName} | card: {p1Card})       vs       (Player: {cardGame.Player2.PlayerName} | card: {p2Card})\n")
         ActionsOnRoundWinner(p1Card, p2Card, cardGame)
         # if(p1Card > p2Card ): # THE FUNCTION ABOVE DOES THE SAME THING
         #     cardGame.Player1.Add_Card(p1Card)
