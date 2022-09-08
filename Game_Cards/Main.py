@@ -34,10 +34,9 @@ if __name__ == "__main__":
     playerName1 = input("Please enter the name of the first player: ")
     playerName2 = input("Please enter the name of the second player: ")
 
-    playerDeckSize1 = input("Please enter an integer for the decksize of the first player (10-26): ")
-    playerDeckSize2 = input("Please enter an integer for the decksize of the second player (10-26): ")
+    playerDeckSize = input("Please enter an integer for the decksize of the first player (10-26): ")
 
-    cardGame = CardGame(playerName1,playerName2,playerDeckSize1,playerDeckSize2)
+    cardGame = CardGame(playerName1,playerName2,playerDeckSize)
     GameWinner = CardGameManager(cardGame)
 
     if(GameWinner is not None):
