@@ -79,12 +79,12 @@ class TestCardGame(TestCase):
     def test_CardGame_GetWinner_validPlayer1(self):
         with mock.patch('CardGame.CardGame.GameStatus') as gameStatus:
             gameStatus.return_value = 1
-            self.assertEqual(self.cardgame.Get_Winner(),self.cardgame.Player1)
+            self.assertEqual(self.cardgame.Get_Winner(), self.cardgame.Player1)
 
     def test_CardGame_GetWinner_validPlayer2(self):
         with mock.patch('CardGame.CardGame.GameStatus') as gameStatus:
             gameStatus.return_value = 2
-            self.assertEqual(self.cardgame.Get_Winner(),self.cardgame.Player2)
+            self.assertEqual(self.cardgame.Get_Winner(), self.cardgame.Player2)
 
     def test_CardGame_GetWinner_validPlayer2(self):
         with mock.patch('CardGame.CardGame.GameStatus') as gameStatus:

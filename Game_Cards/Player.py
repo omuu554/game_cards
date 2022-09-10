@@ -52,7 +52,11 @@ class Player:
 
 
     def __str__(self):
+        "function returns players name and the amount of cards he have"
         return f"Player: {self.PlayerName}\nCardsAmount: {len(self.PlayerCards)} "
+
+
+
     def IsPlayerDeckNotEmpty(self):
         "function checks if the deck of the player is empty"
         return self.PlayerCards
