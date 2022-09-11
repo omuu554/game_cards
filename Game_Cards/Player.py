@@ -1,7 +1,6 @@
 from DeckOfCards import DeckOfCards
 from Card import Card
 import random
-import re
 class Player:
     "A player object"
 
@@ -45,7 +44,7 @@ class Player:
     def __PlayerNameIsEmpty(self, NameOfPlayer:str):
         "function checks if the given player name is empty and changes it if it does change to default"
 
-        if(re.sub(' +', ' ',str(NameOfPlayer)) == ""):
+        if(" ".join(str(NameOfPlayer).split()) == ""):
             NameOfPlayer = "GuestPlayer"
 
         return " ".join(str(NameOfPlayer).split())

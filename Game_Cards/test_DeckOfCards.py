@@ -38,6 +38,7 @@ class TestDeckOfCards(TestCase):
         Deck2 = DeckOfCards()
         Deck2.CardShuffle()
         self.assertNotEqual(Deck2.DeckCards,self.Deck1.DeckCards)
+        self.assertEqual(len(Deck2.DeckCards), 52)
         for i in range(52):
          self.assertIn(Deck2.DeckCards[i],self.Deck1.DeckCards)
 
