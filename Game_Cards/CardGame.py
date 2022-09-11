@@ -1,12 +1,14 @@
 from Player import Player
 from DeckOfCards import DeckOfCards
+import re
 
 class CardGame:
     "creates an object of CardGame"
 
     def __init__(self,PlayerName1:str = "GuestPlayer", PlayerName2:str = "GuestPlayer", PlayerDeckSize:int = 26):
         "card game instantiates 2 players and a deck of cards at instantiation"
-        PlayerName1,PlayerName2 = self.__IsNamesTheSame(PlayerName1,PlayerName2)
+        PlayerName1, PlayerName2 = self.__PlayerNameIsEmpty(PlayerName1, PlayerName2)
+        PlayerName1, PlayerName2 = self.__IsNamesTheSame(PlayerName1,PlayerName2)
 
         self.Player1 = Player(PlayerName1, PlayerDeckSize)
         self.Player2 = Player(PlayerName2, PlayerDeckSize)
@@ -15,6 +17,17 @@ class CardGame:
         self.Player1.PlayerName,self.Player2.PlayerName = self.__IsNamesTheSame( self.Player1.PlayerName, self.Player2.PlayerName)
 
         self.__New_Game()
+
+    def __PlayerNameIsEmpty(self, NameOfPlayer1:str,  NameOfPlayer2:str):
+        "function checks if the given player name is empty and changes it if it does"
+
+        if(re.sub(' +', ' ',str(NameOfPlayer1)) == ""):
+            NameOfPlayer1 = "GuestPlayer"
+
+        if (re.sub(' +', ' ', str(NameOfPlayer2)) == ""):
+            NameOfPlayer2 = "GuestPlayer"
+
+        return " ".join(str(NameOfPlayer1).split()), " ".join(str(NameOfPlayer2).split())
 
     def __IsNamesTheSame(self,NamePlayer1:str, NamePlayer2:str):
         "checks if the players name is the same and changes it if it does"

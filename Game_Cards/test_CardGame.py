@@ -75,6 +75,27 @@ class TestCardGame(TestCase):
         self.assertEqual(cardgame.Player2.PlayerName, 'GuestPlayer(2)')
         self.assertEqual(len(cardgame.DeckOfCards.DeckCards), 0)
 
+        cardgame = CardGame("", "GuestPlayer")
+        self.assertEqual(len(cardgame.Player1.PlayerCards), 26)
+        self.assertEqual(len(cardgame.Player2.PlayerCards), 26)
+        self.assertEqual(cardgame.Player1.PlayerName, 'GuestPlayer(1)')
+        self.assertEqual(cardgame.Player2.PlayerName, 'GuestPlayer(2)')
+        self.assertEqual(len(cardgame.DeckOfCards.DeckCards), 0)
+
+        cardgame = CardGame("GuestPlayer(2)", "")
+        self.assertEqual(len(cardgame.Player1.PlayerCards), 26)
+        self.assertEqual(len(cardgame.Player2.PlayerCards), 26)
+        self.assertEqual(cardgame.Player1.PlayerName, 'GuestPlayer(2)')
+        self.assertEqual(cardgame.Player2.PlayerName, 'GuestPlayer')
+        self.assertEqual(len(cardgame.DeckOfCards.DeckCards), 0)
+
+        cardgame = CardGame("", "GuestPlayer(1)")
+        self.assertEqual(len(cardgame.Player1.PlayerCards), 26)
+        self.assertEqual(len(cardgame.Player2.PlayerCards), 26)
+        self.assertEqual(cardgame.Player1.PlayerName, 'GuestPlayer')
+        self.assertEqual(cardgame.Player2.PlayerName, 'GuestPlayer(1)')
+        self.assertEqual(len(cardgame.DeckOfCards.DeckCards), 0)
+
 
     def test_CardGame_GetWinner_validPlayer1(self):
         with mock.patch('CardGame.CardGame.GameStatus') as gameStatus:

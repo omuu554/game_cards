@@ -42,7 +42,7 @@ class Player:
 
         return DeckSize
 
-    def __PlayerNameIsEmpty(self, NameOfPlayer):
+    def __PlayerNameIsEmpty(self, NameOfPlayer:str):
         "function checks if the given player name is empty and changes it if it does"
 
         if(re.sub(' +', ' ',str(NameOfPlayer)) == ""):
