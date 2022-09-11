@@ -19,7 +19,7 @@ class CardGame:
         self.__New_Game()
 
     def __PlayerNameIsEmpty(self, NameOfPlayer1:str,  NameOfPlayer2:str):
-        "function checks if the given player name is empty and changes it if it does"
+        "function checks if the given player name is empty and changes it if it does change name to default"
 
         if(re.sub(' +', ' ',str(NameOfPlayer1)) == ""):
             NameOfPlayer1 = "GuestPlayer"
