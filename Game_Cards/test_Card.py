@@ -105,6 +105,18 @@ class TestCard(TestCase):
         self.assertNotEqual(card1, card2)
         self.assertFalse(card1 == card2)
 
+    def test_Card_eq_invalidRaiseError(self):
+        with self.assertRaises(TypeError):
+            card1 = Card(3, 4)
+            print(card1 == 6)
+
+        with self.assertRaises(TypeError):
+            card1 = Card(3, 4)
+            print(card1 != "abc")
+
+
+
+
     def test_Card_gt_validValueUnequal(self):
         card1 = Card(9, 4)
         card2 = Card(6, 2)
@@ -140,6 +152,17 @@ class TestCard(TestCase):
         card1 = Card(11, 2)
         card2 = Card(11, 3)
         self.assertFalse(card1 > card2)
+
+    def test_Card_gt_invalidRaiseError(self):
+        with self.assertRaises(TypeError):
+            card1 = Card(6, 1)
+            print(card1 > 6)
+
+        with self.assertRaises(TypeError):
+            card1 = Card(6, 1)
+            print(card1 > "abc")
+
+
 
 def tearDown(self):
         pass

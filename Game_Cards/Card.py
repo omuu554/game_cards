@@ -30,13 +30,22 @@ class Card:
         if(value < 1 or value > 5):
             raise TypeError("value cannot be smaller than 1 or bigger than 5")
 
+
+    def __RaiseErrorIfNotCard(self, card):
+        "function raises exeption if deck size if card is not of type Card"
+        if(type(card) != Card):
+            raise TypeError("The card you have entered is not of type Card")
+
     def __eq__(self, other):
         "function checks if the card equals to other card"
+        self.__RaiseErrorIfNotCard(other)
         return self.Value == other.Value and self.Suit == other.Suit
 
 
     def __gt__(self, other):
         "function checks if the card is greater than the other card"
+        self.__RaiseErrorIfNotCard(other)
+
         if(self.Value == other.Value):
             return self.Suit > other.Suit
 
