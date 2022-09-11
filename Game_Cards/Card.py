@@ -1,4 +1,4 @@
-
+from __future__ import annotations
 
 class Card:
     "A card object"
@@ -20,14 +20,14 @@ class Card:
             if (not str(Num).isdigit() or type(Num) != int):
                 raise TypeError("Card can only get integer numbers")
 
-    def __RaiseErrorBadValue(self, value):
+    def __RaiseErrorBadValue(self, value:int):
         "function raises exeption if the value entered is smaller than 1 or is bigger than 13"
         if(value < 1 or value > 13):
             raise TypeError("value cannot be smaller than 1 or bigger than 13")
 
-    def __RaiseErrorBadSuit(self, value):
+    def __RaiseErrorBadSuit(self, Suit:int):
         "function raises exeption if the suit entered is smaller than 1 or is bigger than 5"
-        if(value < 1 or value > 5):
+        if(Suit < 1 or Suit > 5):
             raise TypeError("value cannot be smaller than 1 or bigger than 5")
 
 
@@ -36,13 +36,13 @@ class Card:
         if(type(card) != Card):
             raise TypeError("The card you have entered is not of type Card")
 
-    def __eq__(self, other):
+    def __eq__(self, other:Card):
         "function checks if the card equals to other card"
         self.__RaiseErrorIfNotCard(other)
         return self.Value == other.Value and self.Suit == other.Suit
 
 
-    def __gt__(self, other):
+    def __gt__(self, other:Card):
         "function checks if the card is greater than the other card"
         self.__RaiseErrorIfNotCard(other)
 
